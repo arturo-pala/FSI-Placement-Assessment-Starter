@@ -1,27 +1,56 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+let yourName = "Arturo Palafox"
+let gb = 0      // Ginger bread
+let cc = 0      // Chocolate Chip
+let sugar = 0   // Sugar Sprinkle
 
-// We'll use these variables to track the counts of each cookie type
-let gb = 0 // Gingerbread
-let cc = 0 // Chocolate Chip
-let sugar = 0 // Sugar Sprinkle
-
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
-
-// Code to update name display
 credit.textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
-gbPlusBtn.addEventListener('click', function() {
-// HINT: You can delete this console.log after you no longer need it!
-console.log('Gingerbread + button was clicked!')
+const cookieTotal = document.querySelector('#qty-total')
+const gbQty = document.querySelector('#qty-gb')
+const gbAdd = document.querySelector('#add-gb')
+const gbMinus = document.querySelector('#minus-gb')
+const ccQty = document.querySelector('#qty-cc')
+const ccAdd = document.querySelector('#add-cc')
+const ccMinus = document.querySelector('#minus-cc')
+const sugarQty = document.querySelector('#qty-sugar')
+const sugarAdd = document.querySelector('#add-sugar')
+const sugarMinus = document.querySelector('#minus-sugar')
 
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+gbAdd.addEventListener('click', function() {
+    gb = gb +1;
+    gbQty.textContent = gb;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('gb was pressed')
+})
+gbMinus.addEventListener('click', function() {
+    gb = gb -1;
+    gbQty.textContent = gb;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('gb minus was pressed')
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+ccAdd.addEventListener('click', function() {
+    cc = cc +1;
+    ccQty.textContent = cc;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('cc was pressed')
+})
+ccMinus.addEventListener('click', function() {
+    cc = cc -1;
+    ccQty.textContent = cc;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('cc minus was pressed')
+})
+
+sugarAdd.addEventListener('click', function() {
+    sugar = sugar +1;
+    sugarQty.textContent = sugar;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('sugar was pressed')
+})
+sugarMinus.addEventListener('click', function() {
+    sugar = sugar -1;
+    sugarQty.textContent = sugar;
+    cookieTotal.textContent = gb + cc + sugar;
+    console.log('sugar minus was pressed')
+}) 
